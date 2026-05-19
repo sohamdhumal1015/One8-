@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ONE8 by Virat Kohli - Premium luxury sportswear, sneakers and fashion. Own Your Style." />
+  <meta name="keywords" content="ONE8, Virat Kohli, sportswear, sneakers, luxury fashion, hoodies, jackets" />
+  <title>ONE8 — Own Your Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ LOADING SCREEN ══ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">ONE8</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-tag">Loading Premium Experience</p>
+    </div>
+  </div>
+
+  <!-- ══ CUSTOM CURSOR ══ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">ONE<span>8</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+        <li><a href="#men" class="nav-link">Men</a></li>
+        <li><a href="#women" class="nav-link">Women</a></li>
+        <li><a href="#shoes" class="nav-link">Shoes</a></li>
+        <li><a href="#collections" class="nav-link">Collections</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="nav-icon-btn cart-btn" id="cartToggle" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+      <div class="search-inner">
+        <input type="text" placeholder="Search products, collections..." id="searchInput" />
+        <button id="searchClose">✕</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ CART SIDEBAR ══ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="64" height="64"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <p>Your cart is empty</p>
+        <a href="#new-arrivals" class="btn-primary" onclick="closeCart()">Shop Now</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn-primary full-width">Proceed to Checkout</button>
+      <button class="btn-outline full-width" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </aside>
+
+  <!-- ══ HERO SECTION ══ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">Virat Kohli × ONE8</div>
+      <h1 class="hero-title">
+        <span class="hero-line reveal-up delay-1">OWN YOUR</span>
+        <span class="hero-line reveal-up delay-2 gold-text">STYLE</span>
+      </h1>
+      <p class="hero-sub reveal-up delay-3">Premium sportswear redefined. Play hard. Look harder.</p>
+      <div class="hero-cta reveal-up delay-4">
+        <a href="#new-arrivals" class="btn-primary">Shop Now</a>
+        <a href="#collections" class="btn-ghost">View Collections</a>
+      </div>
+      <div class="hero-stats reveal-up delay-5">
+        <div class="stat"><strong>50+</strong><span>Products</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>10K+</strong><span>Happy Customers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>5★</strong><span>Rated Brand</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <!-- Floating badges -->
+    <div class="float-badge badge-1">New Drop 🔥</div>
+    <div class="float-badge badge-2">Free Shipping ✈️</div>
+  </section>
+
+  <!-- ══ MARQUEE STRIP ══ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>ONE8 ORIGINALS</span><span class="red-dot">✦</span>
+      <span>OWN YOUR STYLE</span><span class="red-dot">✦</span>
+      <span>VIRAT KOHLI</span><span class="red-dot">✦</span>
+      <span>PREMIUM SPORTSWEAR</span><span class="red-dot">✦</span>
+      <span>NEW ARRIVALS</span><span class="red-dot">✦</span>
+      <span>LUXURY STREETWEAR</span><span class="red-dot">✦</span>
+      <span>ONE8 ORIGINALS</span><span class="red-dot">✦</span>
+      <span>OWN YOUR STYLE</span><span class="red-dot">✦</span>
+      <span>VIRAT KOHLI</span><span class="red-dot">✦</span>
+      <span>PREMIUM SPORTSWEAR</span><span class="red-dot">✦</span>
+      <span>NEW ARRIVALS</span><span class="red-dot">✦</span>
+      <span>LUXURY STREETWEAR</span><span class="red-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══ NEW ARRIVALS ══ -->
+  <section class="section" id="new-arrivals">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">Fresh Drop</div>
+        <h2 class="section-title">New <span class="gold-text">Arrivals</span></h2>
+        <p class="section-sub">The latest from ONE8 — designed for champions</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-btns reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="men">Men</button>
+        <button class="filter-btn" data-filter="women">Women</button>
+        <button class="filter-btn" data-filter="shoes">Shoes</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MEN'S SECTION ══ -->
+  <section class="section section-dark" id="men">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">For Him</div>
+        <h2 class="section-title">Men's <span class="red-text">Collection</span></h2>
+      </div>
+      <div class="split-showcase">
+        <div class="showcase-visual reveal-left">
+          <div class="showcase-card">
+            <div class="showcase-img men-showcase"></div>
+            <div class="showcase-overlay">
+              <span>Men's Essentials</span>
+              <p>Hoodies • Joggers • Tees • Jackets</p>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content reveal-right">
+          <h3>Built for <br/><span class="gold-text">Performance</span></h3>
+          <p>Every piece in the ONE8 men's line is engineered with premium fabrics and styled to transition from the gym to the streets seamlessly.</p>
+          <ul class="feature-list">
+            <li>✦ Moisture-wicking tech fabric</li>
+            <li>✦ Ergonomic athletic cuts</li>
+            <li>✦ Durable premium stitching</li>
+            <li>✦ Limited edition colorways</li>
+          </ul>
+          <a href="#new-arrivals" class="btn-primary" onclick="filterByCategory('men')">Shop Men</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WOMEN'S SECTION ══ -->
+  <section class="section" id="women">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">For Her</div>
+        <h2 class="section-title">Women's <span class="gold-text">Collection</span></h2>
+      </div>
+      <div class="split-showcase reverse">
+        <div class="showcase-visual reveal-right">
+          <div class="showcase-card">
+            <div class="showcase-img women-showcase"></div>
+            <div class="showcase-overlay">
+              <span>Women's Essentials</span>
+              <p>Sports Bras • Leggings • Tees • Jackets</p>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content reveal-left">
+          <h3>Style Meets <br/><span class="red-text">Strength</span></h3>
+          <p>ONE8 women's wear blends high-performance sport technology with fashion-forward silhouettes. Made for women who don't compromise.</p>
+          <ul class="feature-list">
+            <li>✦ Flexible 4-way stretch fabric</li>
+            <li>✦ Fashion-forward designs</li>
+            <li>✦ Body-sculpting fits</li>
+            <li>✦ Vibrant seasonal palettes</li>
+          </ul>
+          <a href="#new-arrivals" class="btn-primary" onclick="filterByCategory('women')">Shop Women</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SHOES SECTION ══ -->
+  <section class="section section-dark" id="shoes">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">Footwear</div>
+        <h2 class="section-title">Sneaker <span class="gold-text">Lab</span></h2>
+        <p class="section-sub">Engineered for speed. Designed for culture.</p>
+      </div>
+      <div class="sneakers-showcase" id="sneakersShowcase">
+        <!-- Sneaker cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COLLECTIONS ══ -->
+  <section class="section" id="collections">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">Curated</div>
+        <h2 class="section-title">Iconic <span class="red-text">Collections</span></h2>
+      </div>
+      <div class="collections-grid reveal-up">
+        <div class="collection-card col-large">
+          <div class="collection-bg c1"></div>
+          <div class="collection-info">
+            <span class="collection-tag">New</span>
+            <h3>ELITE SERIES</h3>
+            <p>Premium performance wear</p>
+            <a href="#new-arrivals" class="collection-link">Explore →</a>
+          </div>
+        </div>
+        <div class="collection-card col-small">
+          <div class="collection-bg c2"></div>
+          <div class="collection-info">
+            <h3>STREET READY</h3>
+            <p>Urban streetwear drops</p>
+            <a href="#new-arrivals" class="collection-link">Explore →</a>
+          </div>
+        </div>
+        <div class="collection-card col-small">
+          <div class="collection-bg c3"></div>
+          <div class="collection-info">
+            <h3>MATCH DAY</h3>
+            <p>Cricket-inspired fashion</p>
+            <a href="#new-arrivals" class="collection-link">Explore →</a>
+          </div>
+        </div>
+        <div class="collection-card col-medium">
+          <div class="collection-bg c4"></div>
+          <div class="collection-info">
+            <h3>SOLE STORY</h3>
+            <p>Exclusive sneaker drops</p>
+            <a href="#shoes" class="collection-link">Explore →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT BRAND ══ -->
+  <section class="section section-about" id="about">
+    <div class="about-bg-text">ONE8</div>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal-left">
+          <div class="section-eyebrow">Our Story</div>
+          <h2 class="section-title">Born from <span class="gold-text">Champions</span></h2>
+          <p>ONE8 is more than a brand — it's a mindset. Founded by Virat Kohli, ONE8 embodies the champion's spirit: relentless ambition, flawless style, and the drive to own every moment.</p>
+          <p>Every piece is crafted to reflect the energy of a champion — on the pitch, in the gym, and on the streets. Premium materials meet purposeful design in every collection we release.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>2017</strong>
+              <span>Founded</span>
+            </div>
+            <div class="about-stat">
+              <strong>18</strong>
+              <span>Collections</span>
+            </div>
+            <div class="about-stat">
+              <strong>100%</strong>
+              <span>Premium Quality</span>
+            </div>
+          </div>
+          <a href="#new-arrivals" class="btn-primary">Explore Brand</a>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="about-card-stack">
+            <div class="about-img-card card-back"></div>
+            <div class="about-img-card card-front">
+              <div class="about-quote">
+                <div class="quote-mark">"</div>
+                <p>Success is not about luck. It's about showing up every day, pushing limits, and owning your style on and off the field.</p>
+                <span>— Virat Kohli</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="section section-dark" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">Reviews</div>
+        <h2 class="section-title">What <span class="gold-text">Champions</span> Say</h2>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Testimonials injected by JS -->
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn">←</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextBtn">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER ══ -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-box reveal-up">
+        <div class="newsletter-content">
+          <div class="section-eyebrow">Stay Updated</div>
+          <h2>Get Early Access to <span class="gold-text">New Drops</span></h2>
+          <p>Join 10,000+ ONE8 fans and be the first to know about exclusive launches and limited editions.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="form-group-inline">
+            <input type="email" placeholder="Enter your email address" required id="newsletterEmail" />
+            <button type="submit" class="btn-primary">Subscribe</button>
+          </div>
+          <p class="form-note">No spam ever. Unsubscribe anytime. 🔒</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-title">Contact <span class="red-text">ONE8</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form-wrap reveal-left">
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Virat Kohli" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Order query, collaboration..." required />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="5" placeholder="Tell us what's on your mind..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info reveal-right">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <p>ONE8 HQ, Bandra West, Mumbai 400050</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <p>hello@one8.in</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div>
+                <strong>Hours</strong>
+                <p>Mon – Sat: 9AM – 7PM IST</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.658!2d72.8311!3d19.0560!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzIxLjYiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="200" style="border:0;border-radius:12px;filter:grayscale(1) invert(1);" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">ONE<span>8</span></div>
+            <p>Born from a champion's spirit. Designed for those who dare to own every moment — on and off the field.</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon sm">IG</a>
+              <a href="#" class="social-icon sm">TW</a>
+              <a href="#" class="social-icon sm">FB</a>
+              <a href="#" class="social-icon sm">YT</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#new-arrivals">New Arrivals</a></li>
+              <li><a href="#men">Men</a></li>
+              <li><a href="#women">Women</a></li>
+              <li><a href="#shoes">Shoes</a></li>
+              <li><a href="#collections">Collections</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Customer Support</h4>
+            <ul>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About ONE8</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 ONE8 by Virat Kohli. All rights reserved. Crafted with ✦ in India.</p>
+        <div class="payment-icons">
+          <span>Visa</span><span>Mastercard</span><span>UPI</span><span>PayTM</span><span>RazorPay</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ BACK TO TOP ══ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ══ PRODUCT QUICK VIEW MODAL ══ -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- ══ TOAST NOTIFICATION ══ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
